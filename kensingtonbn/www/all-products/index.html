@@ -1,0 +1,134 @@
+{% from "erpnext/templates/includes/macros.html" import attribute_filter_section, field_filter_section, discount_range_filters %}
+{% extends "templates/web.html" %}
+
+{% block title %}{{ _('All Products') }}{% endblock %}
+{% block header %}
+<div class="mb-6">{{ _('All Products') }}</div>
+{% endblock header %}
+
+{% block page_content %}
+<div class="row">
+	<!-- Items section -->
+	<div id="product-listing" class="col-12 order-2 col-md-9 order-md-2 item-card-group-section">
+		<!-- Rendered via JS -->
+	</div>
+
+	<!-- Filters Section -->
+	<div class="col-12 order-1 col-md-3 order-md-1">
+		<!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#product-filters" aria-expanded="false" aria-controls="product-filters">
+			Button with data-target
+		</button> -->
+		<button aria-controls="product-filters" aria-expanded="false" aria-label="product-filters" class="navbar-toggler product-filters-button" data-target="#product-filters" data-toggle="collapse" type="button">
+			<span>
+			<svg class="icon icon-lg">
+			<use href="#icon-menu"></use>
+			</svg>
+			</span>
+		</button>
+		<div class="collapse d-md-block mr-4 filters-section" id="product-filters">
+			<div class="d-flex justify-content-between align-items-center mb-5 title-section">
+				<div class="mb-4 filters-title" > {{ _('Filters') }} </div>
+				<a class="mb-4 clear-filters" href="/all-products">{{ _('Clear All') }}</a>
+			</div>
+			<!-- field filters -->
+			{% if field_filters %}
+				{{ field_filter_section(field_filters) }}
+			{% endif %}
+
+			<!-- attribute filters -->
+			{% if attribute_filters %}
+				{{ attribute_filter_section(attribute_filters) }}
+			{% endif %}
+			<!-- my update -->
+			<!-- <div class="mb-4 filter-block pb-5">
+				<form class="multi-range-field my-5 pb-5">
+					<label for="multi3" class="form-label"></label>	
+					<input id="multi3" name="multi3" class="multi-range" type="range" />
+				</form>
+			</div> -->
+
+			<!-- my update -->
+			<!-- <div class="mb-4 filter-block pb-5" id="PriceBox" > 
+				<div class="filter-label mb-12">
+					Price Range
+				</div>
+				
+				<div class="slider-container" >
+					<input type="text" id="slider" class="slider" style="display:none;" />
+				</div>
+				<div>
+					<div class=" m-2">
+						<span id="maxx" class="float-left">0</span><span id="minn" class="float-right">1000</span>
+					</div>
+				</div>
+				<script>
+					(function () {
+						'use strict';
+	
+						var init = function () {                
+	
+							var slider = new rSlider({
+								target: '#slider',
+								values: {min: 0, max: 1000},
+								step: 1,
+								range: true,
+								set: [0, 1000],
+								scale: true,
+								labels: false,
+								onChange: function (vals) {
+									function myFunc(){
+										const val = vals.split(',');
+										var ma = document.getElementById("maxx");
+										var mi = document.getElementById("minn");
+										ma.innerText = val[0] ;
+										mi.innerText = val[1];
+									}   
+									myFunc();
+									}
+							});
+						};
+						window.onload = init;	
+					})();
+				</script>
+				
+
+			</div> -->
+			
+			<!-- my update end-->
+
+		<script>
+			frappe.ready(() => {
+				$('.product-filter-filter').on('keydown', frappe.utils.debounce((e) => {
+					const $input = $(e.target);
+					const keyword = ($input.val() || '').toLowerCase();
+					const $filter_options = $input.next('.filter-options');
+
+					$filter_options.find('.custom-control').show();
+					$filter_options.find('.custom-control').each((i, el) => {
+						const $el = $(el);
+						const value = $el.data('value').toLowerCase();
+						if (!value.includes(keyword)) {
+							$el.hide();
+						}
+					});
+				}, 300));
+			})
+		</script>
+	</div>
+
+</div>
+<script>
+	frappe.ready(() => {
+		$('.btn-prev, .btn-next').click((e) => {
+			const $btn = $(e.target);
+			$btn.prop('disabled', true);
+			const start = $btn.data('start');
+			let query_params = frappe.utils.get_query_params();
+			query_params.start = start;
+			let path = window.location.pathname + '?' + frappe.utils.get_url_from_dict(query_params);
+			window.location.href = path;
+		});
+	});
+</script>
+
+{% endblock %}

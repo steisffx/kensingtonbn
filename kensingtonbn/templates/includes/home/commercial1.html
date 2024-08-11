@@ -1,0 +1,22 @@
+<div class="pt-4 pb-4" >
+    <div class="container " > 
+        <div class="d-flex flex-column flex-md-row  justify-content-between">
+         {% for advertise in slideshow %} 
+            <div class="d-flex elemnt m-4">
+                <div class="rounded hover-rotate ">
+                    <img src="{% if advertise.advertising_image %} {{ advertise.advertising_image }} {% endif %}"> 
+                </div>
+                <div class="shop neon font-weight-bold">
+                {% if advertise.advertising_link %} 
+                <a href="{{ advertise.advertising_link }}" target="_blank" class="text-nowrap">{% if advertise.advertising_text %} {{ advertise.advertising_text }} {% endif %}</a>
+                {% else %}
+                <p  class="text-nowrap">{% if advertise.advertising_text %} {{ advertise.advertising_text }} {% endif %}</p>
+                {% endif %}
+
+                    
+                </div> 
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>

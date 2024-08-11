@@ -1,0 +1,91 @@
+{% if slides %}
+
+<div id="carouselExampleIndicators" class="container-fluid pl-0 pr-0 carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+        {% for slide in slides %} 
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index-1 }}"  class="{% if loop.index==1 %} active {% endif %}"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner" >
+
+     {% for slide in slides %} 
+        <div class="carousel-item {% if loop.index==1 %} active {% endif %}">
+
+
+          {% if slide.video_file %}
+          <!-- {{ slide.slideshow_file_link }} -->
+              <!-- video slides -->
+              {% if slide.slideshow_file_link %} 
+                  <a href="{{ slide.slideshow_file_link }}" target="_blank">
+                      <video class="d-block w-100" poster="" id="bgvid" playsinline="" autoplay="" muted="" loop="loop" playbackrate="0.5" __idm_id__="283990017">      
+                          <source src="{{ slide.video_file }}" type="video/mp4">      
+                      </video>
+                  </a>
+              {% else %}
+                      <video class="d-block w-100" poster="" id="bgvid" playsinline="" autoplay="" muted="" loop="loop" playbackrate="0.5" __idm_id__="283990017">      
+                          <source src="{{ slide.video_file }}" type="video/mp4">      
+                      </video>
+              {% endif %}
+          {% else %}
+              <!-- <img class="d-block w-100" src="{{ slide.image_file }}" alt=""> -->
+               <!-- image slides -->
+              {% if slide.slideshow_file_link %} 
+                  <a href="{{ slide.slideshow_file_link }}" target="_blank">
+                  {% if  slide.image_file %}
+                      <img class="d-block w-100" src="{{ slide.image_file }}" alt="">
+                  {% endif %}
+                  </a>
+              {% else %}
+                  {% if  slide.image_file %}
+                      <img class="d-block w-100" src="{{ slide.image_file }}" alt="">
+                  {% endif %}
+              {% endif %}
+          {% endif %}
+           
+
+
+
+             
+        </div>
+          
+      {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      
+      <!-- <span class="ScrollBack" aria-hidden="true">
+        <img class="" src="/assets/kensingtonbn/images/Group 45.png" >        
+      </span> -->
+      <span class="ScrollBack" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>      
+      </span>
+      <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">  
+      <!-- <span class="ScrollNext " aria-hidden="true">
+        <img class="" src="/assets/kensingtonbn/images/Group 44.png" >
+      </span> -->
+      <span class="ScrollNext " aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg>
+      </span>
+      <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+{% endif %}
+<div id="advertisingsection1"></div>
+
+<div id="placeholdersection1"></div>
+
+<div id="advertisingsection2"></div>
+
+<div id="placeholdersection2"></div>
+<div id="placeholdersection3"></div>
+<div id="placeholdersection4"></div>
+<div id="placeholdersection5"></div>
+<div id="placeholdersection6"></div>

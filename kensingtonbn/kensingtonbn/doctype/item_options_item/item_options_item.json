@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2021-12-14 22:49:09.935526",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_options_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_options_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Options Item",
+   "options": "Item Options"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-12-14 23:52:07.242157",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Item Options Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

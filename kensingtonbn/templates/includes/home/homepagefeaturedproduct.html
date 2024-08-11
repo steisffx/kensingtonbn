@@ -1,0 +1,39 @@
+
+<div class="homeboxproduct">
+    <div class="container">
+
+    
+
+
+{% for product in productlist %}
+
+
+
+
+        {% if loop.index == 1 %}
+        <div class="row" style="flex-wrap: wrap;">
+        {% endif %}
+
+
+            <div class="col col-6 col-md-3">
+                <a  href="/pages" style="display: block;">
+                    <div class="img" style="background-image: url('{{ product.image }}');height: 200px;background-position: center;background-size: cover;">
+                    </div>
+                    <div class="txt2">
+                        <b>Item:</b> {{ product.item }}<br>
+                        <b>Expiry Date:</b> {{ product.expiry_date or 'N/A' }}<br>                        
+                        <b>Price:</b> {{ product.price_list_rate or 'N/A' }}<br>
+
+                    </div>
+                                </a>
+
+            </div>
+        {% if loop.index == loop.length  %}
+        </div>
+        {% endif %}
+
+
+{% endfor %}
+    </div>
+</div>
+

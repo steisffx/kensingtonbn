@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-07-27 23:25:42.547622",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "assigned_by",
+  "column_break_3",
+  "assigned_to",
+  "column_break_5",
+  "date",
+  "timeline_section",
+  "accept",
+  "accepted_datetime",
+  "column_break_10",
+  "start",
+  "activity_start_date",
+  "column_break_7",
+  "end",
+  "activity_end_date",
+  "details_section",
+  "subject",
+  "description",
+  "column_break_19",
+  "notes",
+  "employee_activity_item"
+ ],
+ "fields": [
+  {
+   "default": "EA-.YY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "EA-.YY.-"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned To",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "timeline_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Timeline"
+  },
+  {
+   "default": "0",
+   "fieldname": "accept",
+   "fieldtype": "Check",
+   "label": "Accept",
+   "read_only": 1
+  },
+  {
+   "fieldname": "accepted_datetime",
+   "fieldtype": "Datetime",
+   "label": "Accepted Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "start",
+   "fieldtype": "Check",
+   "label": "Start",
+   "read_only": 1
+  },
+  {
+   "fieldname": "activity_start_date",
+   "fieldtype": "Datetime",
+   "label": "Activity Start Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "end",
+   "fieldtype": "Check",
+   "label": "End",
+   "read_only": 1
+  },
+  {
+   "fieldname": "activity_end_date",
+   "fieldtype": "Datetime",
+   "label": "Activity End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Notes"
+  },
+  {
+   "fieldname": "employee_activity_item",
+   "fieldtype": "Table",
+   "label": "Employee Activity Item",
+   "options": "Employee Activity Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-30 20:15:41.495531",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Employee Activity",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "subject"
+}

@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Section .#",
+ "creation": "2022-01-01 18:34:24.431628",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "group_title",
+  "section_number",
+  "group_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "group_title",
+   "fieldtype": "Data",
+   "label": "Group Title"
+  },
+  {
+   "fieldname": "section_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Section Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "group_image",
+   "fieldtype": "Attach Image",
+   "label": "Group Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-02 17:56:33.697856",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Homepage Product Section",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

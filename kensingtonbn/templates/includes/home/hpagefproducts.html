@@ -1,0 +1,153 @@
+
+<div class="homeboxproduct">
+    <div class="container">
+
+{% for product in productlist %}
+        {% if loop.index != 1 and product.group_title != productlist[loop.index - 2].group_title  %}
+    </div>
+</div></div>
+        <div class="ScrollNext rounded shadow ItemOff">
+            <img src="/assets/kensingtonbn/images/Group 44.png">
+        </div>
+        
+        <div class="ScrollBack rounded shadow ItemOff">
+            <img src="/assets/kensingtonbn/images/Group 45.png">
+        </div>
+        </div>
+
+        {% endif %}
+
+        {% if loop.index == 1 or product.group_title != productlist[loop.index -2].group_title  %}
+{% if product.group_title %}
+<div class="row group-title-fa  ">
+    <div class="col-3 group-title" >
+    </div>
+    <div class="group-title-ch font-weight-bold  pl-4" >
+            {{ product.group_title }}  
+    </div>
+    
+</div>
+
+
+{% endif %}
+<div class="row d-flex flex-column flex-md-row ">  <!-- my update -->     
+        <div class="col  col-md-3 title " id="group_title_for_item" {% if product.group_image  %} style="background-image: url('{{ product.group_image or '' }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;"{% endif %}>
+            <!-- <div class="txt3 neon" >
+                {{ product.group_title }}  
+            </div> -->
+        </div>
+        
+        <div class="row HorizontalScrollContainer">
+            <div><div><div>     
+        {% endif %}
+
+
+            <div class="Item ItemOff Itembar data">
+                <a style="display: block;" href="/{{ product.route}}{%if product.batch_id%}/?batch={{product.batch_id}}{% endif %}">
+                    <div class="img rounded-0" style="background-image: url('{{ product.image or '/assets/kensingtonbn/images/notavailable.jpg' }}');
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;">
+                    </div>
+                    <div class="txt2 rounded-0">
+                        <div class="itemname">
+                            {{ product.item_name }} <br>
+                            
+
+                        </div>
+                        <!-- custSom update for hiding exp-->
+                        {% if product.best_value_dateeeeeeee %}
+                        <div>
+                            EXP: {{ product.best_value_date or 'N/A' }}<br>
+                        </div>
+                        {% endif %}
+                        
+                        <div>                
+                            <!-- For Discount  -->
+                            <div style=" direction: ltr">{{ product.formatted_price or 'NA' }}</div>
+                            {%if product.formatted_mrp %}
+                            <div style=" direction: ltr">
+                                <small class="striked-price" >
+                                    <s>{{ product.formatted_mrp }}</s>
+                                </small>
+                                <small class="ml-1 product-info-green" style="color:red; ">
+                                    {{ product.get('formatted_discount_rate') or product.get('formatted_discount_percent') }} OFF
+                                </small>
+                            </div>
+                            {%endif%}
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        {% if loop.index == loop.length  %}
+    </div>
+</div></div>
+<div class="ScrollNext rounded shadow ItemOff">
+    <!-- <img src="/assets/kensingtonbn/images/Group 44.png"> -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg>
+</div>
+
+<div class="ScrollBack rounded shadow ItemOff">
+    <!-- <img src="/assets/kensingtonbn/images/Group 45.png"> -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+      </svg>
+</div>
+</div>
+
+
+
+</div><!--  my update -->
+        {% endif %}
+
+
+{% endfor %}
+    </div>
+</div>
+
+
+<!-- 
+<div class="homeboxproduct">
+    <div class="container">
+{% for product in productlist %}
+        {% if loop.index != 1 and product.group_title != productlist[loop.index - 2].group_title  %}
+        </div>
+        {% endif %}
+
+        {% if loop.index == 1 or product.group_title != productlist[loop.index -2].group_title  %}
+        <div class="row">
+
+            {% if product.group_title %}
+            <div class="col title">
+                <div class="txt3">
+                    {{ product.group_title }}
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}
+
+
+            <div class="col col-6 col-md-3">
+                <a  href="/{{ product.route or '#' }}" style="display: block;">
+                    <div class="img" style="background-image: url('{{ product.image }}');">
+                    </div>
+                    <div class="txt2">
+                        {{ product.item_name }}
+                </div>
+                </a>
+            </div>
+        {% if loop.index == loop.length  %}
+        </div>
+        {% endif %}
+{% endfor %}
+    </div>
+</div>
+
+
+ -->

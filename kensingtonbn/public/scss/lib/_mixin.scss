@@ -1,0 +1,30 @@
+﻿/*responsive grouping*/
+@mixin media-min($size) {
+    @if $size != xs {
+    @media (min-width: map-get($grid-breakpoints, #{$size}) ) {
+        @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+    
+// @each $size in map-keys($grid-breakpoints) {
+//     @include media-min($size) {
+//         .ClassName {
+//             @if $size == xs {
+//                 width: 10px !important;
+//             }
+//             @else if $size == sm {
+//                 width: 20px !important;
+//             }
+//             @else if $size == md {
+//                 width: 30px !important;
+//             }
+//             @else if $size == lg {
+//                 width: 40px !important;
+//             }
+//         }
+//     }
+// }

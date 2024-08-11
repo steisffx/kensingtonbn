@@ -1,0 +1,30 @@
+{
+	"js/e-commerce.min.js": [
+		"e_commerce/product_ui/views.js",
+		"e_commerce/product_ui/grid.js",
+		"e_commerce/product_ui/list.js",
+		"e_commerce/product_ui/search.js"
+  	],
+	  "js/erpnext-web.min.js": [
+		"../../erpnext/erpnext/public/js/website_utils.js",
+		"public/js/shopping_cart.js",
+		"../../erpnext/erpnext/public/js/wishlist.js"
+	],
+	"js/point-of-sale.min.js": [
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_item_selector.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_item_cart.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_item_details.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_number_pad.js",
+		"selling/page/point_of_sale/pos_payment.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_past_order_list.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_past_order_summary.js",
+		"../../erpnext/erpnext/selling/page/point_of_sale/pos_controller.js"
+	],
+	"js/kensingtonbn.js": [
+		"public/js/rSlider.js"
+    ],
+	"css/kensingtonbn.css": [
+		"public/scss/kensingtonbn.scss"
+	]
+
+}

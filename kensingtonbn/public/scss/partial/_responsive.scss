@@ -1,0 +1,21 @@
+﻿
+
+
+@each $size in map-keys($grid-breakpoints) {
+    @include media-min($size) {
+        .ClassName {
+            @if $size == xs {
+                width: 10px !important;
+            }
+            @else if $size == sm {
+                width: 20px !important;
+            }
+            @else if $size == md {
+                width: 30px !important;
+            }
+            @else if $size == lg {
+                width: 40px !important;
+            }
+        }
+    }
+}

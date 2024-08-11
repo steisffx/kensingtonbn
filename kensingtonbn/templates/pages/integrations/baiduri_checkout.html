@@ -1,0 +1,47 @@
+
+<table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order Number</th>
+        <th scope="col">Total</th>      
+        <th scope="col">Payment Methode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{payment_data.order_id}}</td>
+        <td>{{payment_data.amount}}</td>      
+        <td>Baiduri Payment</td>
+      </tr>
+      <tr>
+       
+    </tbody>
+  </table>
+  <script  src='https://baiduri-bpgs.gateway.mastercard.com/checkout/version/54/checkout.js'></script>
+  <script>
+                      Checkout.configure({
+                          merchant: '{{payment_data.merchant_id}}',
+                          order: {
+                              amount: function() {
+                                 // Dynamic calculation of total_amount
+                                 return '{{payment_data.amount}}';
+                                  
+                              },
+                              currency: 'BND',
+                              description: 'Ordered goods',
+                              id: '{{payment_data.order_id}}'
+                          },
+                          interaction: {
+                              operation: 'PURCHASE',
+                              merchant: {
+                                name: 'kensingtonbn'
+                              }
+                          },
+                          session: {
+                              id: '{{payment_data.session_id}}'
+                          }
+                      });
+                      Checkout.showPaymentPage();
+                  </script>

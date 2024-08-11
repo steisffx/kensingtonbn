@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Slide.####",
+ "creation": "2021-11-08 20:36:29.523171",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "image_file",
+  "video_file",
+  "slideshow_file_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "image_file",
+   "fieldtype": "Attach Image",
+   "label": "Image File"
+  },
+  {
+   "fieldname": "video_file",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Video File"
+  },
+  {
+   "fieldname": "slideshow_file_link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Slideshow File Link"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-11-20 10:01:29.058523",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Home Page Main Slideshow",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

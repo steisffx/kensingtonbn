@@ -1,0 +1,36 @@
+<div id="recommendedfor">
+	<h2>Recommended Items</h2>
+	<div class="homeboxproduct" style="background-color: #ffffff;">
+		<div class="container">		
+			<div class="row d-flex flex-row flex-wrap  justify-content-start">
+				
+				{% for row in item %}			
+				<div class="Item ItemOff Itembar m-auto m-sm-2 data p-4 d-flex">
+					<a style="display: block;" href="/{{ row.route or '#' }}">
+						<div class="img rounded-0" style="background-image: url('{{ row.image or '/assets/kensingtonbn/images/notavailable.jpg' }}');
+						background-size: cover;
+						background-position: center;
+						background-repeat: no-repeat;">
+						</div>
+						<div class="txt2 rounded-0">
+							<div class="itemname" style="direction: ltr;">
+								{{ row.item_code }} 
+							</div>
+							<div class="itemname" style="direction: ltr;">
+								EXP: {{  row.expiry_date or 'NA' }}
+							</div>
+							<div class="itemname" style="direction: ltr;">								
+								{% if row.price%}
+									{{ frappe.format(row.price , {'fieldtype': 'Currency'}) }}
+								{% else %}
+									{{ 'NA' }}
+								{% endif %}								
+							</div>
+						</div>
+					</a>
+				</div>		
+				{% endfor %}
+			</div>	
+		</div>
+	</div>
+</div>

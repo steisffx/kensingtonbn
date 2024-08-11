@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Advertise.####",
+ "creation": "2021-11-13 13:59:04.676464",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "advertising_image",
+  "advertising_text",
+  "advertising_link",
+  "advertising_background_color",
+  "section_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "advertising_image",
+   "fieldtype": "Attach Image",
+   "label": "Advertising Image"
+  },
+  {
+   "fieldname": "advertising_text",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Advertising Text"
+  },
+  {
+   "fieldname": "advertising_link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Advertising Link"
+  },
+  {
+   "fieldname": "advertising_background_color",
+   "fieldtype": "Color",
+   "label": "Advertising Background Color"
+  },
+  {
+   "default": "1",
+   "fieldname": "section_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Section Number"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-11-20 10:00:04.974311",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Homepage Advertising",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

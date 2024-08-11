@@ -1,0 +1,62 @@
+
+<div class="container-fluid d-flex flex-row pt-4">
+	<div class="col-3 displaycol3">
+	</div>
+	
+	<div class="col-12 col-md-9">
+		<div class="font-weight-bold">Suggested Items</div>
+	</div>
+</div>
+<div class="container-fluid d-flex flex-row" id="suggested">
+	<div class="col-3 displaycol3">
+	</div>
+	
+	<div class="col-12 col-md-9">
+		<div class="suggestedproduct">
+			<div class="container1">		
+				<div class="rows d-flex flex-row flex-wrap  justify-content-start">
+					
+					{% for row in suggesteditems %}			
+					<div class="Item ItemOff Itembar m-auto m-sm-2 data d-flex">
+						<a style="display: block;" href="/{{ row.route}}{%if row.batch_id%}/?batch={{row.batch_id}}{% endif %}">
+							<div class="img rounded-0" style="background-image: url('{{ row.image or '/assets/kensingtonbn/images/notavailable.jpg' }}');
+							background-size: cover;
+							background-position: center;
+							background-repeat: no-repeat;">
+							</div>
+							<div class="txt2 rounded-0">
+								<div class="details" >
+									{{ row.item_code }} 
+								</div>
+								<div class="details" >
+									EXP: {{  row.best_value_date or 'NA' }}
+								</div>
+								<div class="details" >
+									<!-- {% if row.price%}
+									{{ frappe.format(row.price , {'fieldtype': 'Currency'}) }}
+									{% else %}
+										{{ 'NA' }}
+									{% endif %} -->
+									<!-- For Discount  -->
+									<div style=" direction: ltr">{{ row.formatted_price or 'NA' }}</div>
+									{%if row.formatted_mrp %}
+									<div style=" direction: ltr">
+										<small class="striked-price" >
+											<s>{{ row.formatted_mrp }}</s>
+										</small>
+										<small class="ml-1 product-info-green" style="color:red; ">
+											{{ row.get('formatted_discount_rate') or row.get('formatted_discount_percent') }} OFF
+										</small>
+									</div>
+                            		{%endif%}
+									
+								</div>
+							</div>
+						</a>
+					</div>		
+					{% endfor %}
+				</div>	
+			</div>
+		<!-- </div>
+	</div>
+</div> -->

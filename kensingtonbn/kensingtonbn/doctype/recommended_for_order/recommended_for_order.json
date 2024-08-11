@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-01-27 21:11:30.806188",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "recommended_for_order_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "recommended_for_order_item",
+   "fieldtype": "Table",
+   "label": "Recommended For Order Item",
+   "options": "Recommended For Order Items"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-07-22 07:20:40.739654",
+ "modified_by": "Administrator",
+ "module": "Kensingtonbn",
+ "name": "Recommended For Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

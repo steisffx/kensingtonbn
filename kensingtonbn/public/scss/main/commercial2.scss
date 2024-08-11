@@ -1,0 +1,76 @@
+$comm2-txt-color:  rgb(0, 0, 0);
+.comm{
+    max-height: 160px;
+    min-height:120px;
+    img{
+            height: 100px;
+            width: 150px;
+            object-fit: cover;
+        }
+    a{
+        color: $comm2-txt-color;
+        // text-shadow: 2px 2px 0px #e1c127;
+        text-decoration: none;
+        font-size: 1.4rem;
+        
+    }
+    p{
+      color: $comm1-txt-color;
+      // text-shadow: 2px 2px 0px #e1c127;
+      font-size: 1.4rem;
+    }
+
+}
+// .comm1{
+//     background-color: #cffdd5; 
+// }
+// .comm2{
+//     background-color: #f2b9bb; 
+// }
+// .comm3{
+//     background-color: #bac4f4; 
+// }
+
+
+
+@each $size in map-keys($grid-breakpoints) {
+    @include media-min($size) {
+      .comm{
+        a{
+          @if $size == xs {
+            font-size: 1rem;
+          }
+          @else if $size == sm {
+            font-size: 1.1rem;
+          }
+          @else if $size == md {
+              font-size: 1.2rem;
+          }
+          @else if $size == lg {
+              font-size: 1.3rem;
+          }
+          @else if $size == xl {
+            font-size: 1.4rem;
+          }
+        }
+        p{
+          @if $size == xs {
+            font-size: 1rem;
+          }
+          @else if $size == sm {
+            font-size: 1.1rem;
+          }
+          @else if $size == md {
+              font-size: 1.2rem;
+          }
+          @else if $size == lg {
+              font-size: 1.3rem;
+          }
+          @else if $size == xl {
+            font-size: 1.4rem;
+          }
+        }
+        
+      }
+    }
+}

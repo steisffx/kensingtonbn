@@ -1,0 +1,10 @@
+.point-of-sale-app>.items-selector>.items-container {
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+}
+/* .point-of-sale-app>.items-selector {
+    grid-column: span 7/span 7;
+}
+
+.point-of-sale-app>.customer-cart-container {
+    grid-column: span 3/span 3;
+} */

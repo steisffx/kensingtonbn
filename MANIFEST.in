@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include kensingtonbn *.css
+recursive-include kensingtonbn *.csv
+recursive-include kensingtonbn *.html
+recursive-include kensingtonbn *.ico
+recursive-include kensingtonbn *.js
+recursive-include kensingtonbn *.json
+recursive-include kensingtonbn *.md
+recursive-include kensingtonbn *.png
+recursive-include kensingtonbn *.py
+recursive-include kensingtonbn *.svg
+recursive-include kensingtonbn *.txt
+recursive-exclude kensingtonbn *.pyc

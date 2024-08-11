@@ -1,0 +1,145 @@
+.displaycol3{
+    display:block;
+}
+#suggested{ 
+    
+    .suggestedproduct{
+        background-color: #f9fafa;
+        padding: {
+            top: 15px;
+            bottom: 15px;
+        };
+        .rows{
+            padding : {
+                top: 10px;
+                bottom:10px;
+            };
+            flex-wrap: wrap;
+            .Item {    
+                > a{
+                    position: relative;
+                    height: 100%;
+                    width: 160px;
+                    &:hover{
+                        .txt2{
+                            background-color: $navbar-brand-color;
+                            color: #fff;
+
+                        }
+                    }
+                    .img{
+                        position: relative;
+                        z-index: 9;
+                        height: 200px;
+                        margin-bottom: 96px;
+                    }
+                    &:hover{
+                        .txt2{
+                            z-index: 90;
+                            .details{
+                                white-space: inherit;
+                                text-align: center;
+                                margin-left:0.5rem;
+                                margin-right:0.5rem;
+                            }
+                        }
+                    }
+
+                }
+                
+
+                .img{
+                    background-color: #fff;
+                    background-size: cover;
+                    background-position: center;
+                    // margin-bottom: 60px;
+                }
+                .txt2{
+                    position: absolute;
+                    bottom: 10px;
+                    width: 100%;
+                    color: #333;
+                    word-wrap: break-word;
+                    font-weight: 400;
+                    font-size: 1.125rem;
+                    line-height: 1.2;
+                    font-family: Roboto,sans-serif;
+                    text-align: center;
+                    padding: 10px;
+                    padding-top: 10px;
+                    display: block;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    -webkit-appearance: none;
+                    text-decoration: none;
+                    background: #e6e6e6;
+                    div:nth-child(1){
+                        font-size: 14px;
+                    }
+                    div:nth-child(2){
+                        font-size: 14px;
+                    }
+                    div:nth-child(3){
+                        font-size: 14px;
+                    }
+                    .details{
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        direction: ltr;
+                    }
+                }
+            }  
+        }
+    }
+}
+
+
+
+
+@each $size in map-keys($grid-breakpoints) {
+    @include media-min($size) {  
+
+            .displaycol3{
+                @if $size == xs {
+                    display:none;
+                }
+                @if $size == sm {
+                    display:none;
+                }
+                @else if $size == md {
+                    display:flex;
+                }
+                @else if $size == lg {
+                    display:flex;
+                }
+                @else if $size == xl {
+                    display:flex;
+                }
+            // .suggestedproduct{
+            //     .container1{
+            //         .Item{
+            //             a{
+            //                 @if $size == xs {
+            //                     width:250px;
+            //                 }
+            //                 @if $size == sm {
+            //                     width:200px;
+            //                 }
+            //                 @else if $size == md {
+            //                     width:170px;
+            //                 }
+            //                 @else if $size == lg {
+            //                     width:200px;
+            //                 }
+            //                 @else if $size == xl {
+            //                     width:162px;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+        } 
+    }
+}
+
